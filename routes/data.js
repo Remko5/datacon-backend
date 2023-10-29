@@ -19,18 +19,18 @@ router.get('/', (ctx, next) => {
 	next();
 });
 
-router.get('/:id', (ctx, next) => {
+router.get('/:tracker_id', (ctx, next) => {
 	let getCurrentItem = items.filter(function(item) {
-		if (item.id == ctx.params.id) {
+		if (item.tracker_id == ctx.params.tracker_id) {
 			return true;
 		}
 	});
 
 	if (getCurrentItem.length) {
-		ctx.body = getCurrentItem[0];
+		ctx.body = getCurrentItem;
 	} else {
 		ctx.response.status = 404;
-		ctx.body = 'Item Not Found';
+		ctx.body = 'Items Not Found';
 	}
 	next();
 });
