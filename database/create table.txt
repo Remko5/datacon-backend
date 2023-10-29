@@ -1,0 +1,36 @@
+CREATE TABLE user (
+id integer PRIMARY KEY,
+voornaam varchar(20),
+achternaam varchar(20)
+);
+
+CREATE TABLE tracker (
+id integer PRIMARY KEY,
+naam varchar(20)
+);
+
+CREATE TABLE data (
+id integer PRIMARY KEY,
+tracker_id integer,
+lat numeric,
+long numeric,
+createdAt varchar(19),
+FOREIGN KEY (tracker_id)
+       REFERENCES tracker (id)
+       ON UPDATE CASCADE
+       ON DELETE CASCADE
+);
+
+CREATE TABLE user_tracker (
+user_id integer,
+tracker_id integer,
+PRIMARY KEY(user_id, tracker_id),
+FOREIGN KEY (user_id)
+       REFERENCES user (id)
+       ON UPDATE CASCADE
+       ON DELETE CASCADE
+FOREIGN KEY (tracker_id)
+       REFERENCES tracker (id)
+       ON UPDATE CASCADE
+       ON DELETE CASCADE
+);
