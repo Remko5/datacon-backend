@@ -20,8 +20,8 @@ Get all trackers (GET):
 Get all relations between users and trackers (GET):
 127.0.0.1:3000/user_tracker
 
-Get one data (GET): (example: 127.0.0.1:3000/data/1)
-127.0.0.1:3000/data/{id}
+Get data from one tracker (GET): (example: 127.0.0.1:3000/data/1)
+127.0.0.1:3000/data/{tracker_id}
 
 Get one user (GET): (example: 127.0.0.1:3000/user/1)
 127.0.0.1:3000/user/{id}
