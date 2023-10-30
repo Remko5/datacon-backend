@@ -4,6 +4,7 @@ const Koa = require('koa');
 const koaBody = require('koa-body');
 
 const app = new Koa();
+const cors = require('@koa/cors');
 
 // const db = require('./database_connection.js');
 
@@ -35,5 +36,7 @@ app.use(tracker.routes());
 app.use(tracker.allowedMethods());
 app.use(user_tracker.routes());
 app.use(user_tracker.allowedMethods());
+
+app.use(cors());
 
 app.listen(3000);

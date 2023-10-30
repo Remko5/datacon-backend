@@ -1,7 +1,7 @@
 CREATE TABLE user (
 id integer PRIMARY KEY,
-voornaam varchar(20),
-achternaam varchar(20)
+username varchar(20),
+password number
 );
 
 CREATE TABLE tracker (

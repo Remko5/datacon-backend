@@ -3,7 +3,7 @@ const sequelize = require('../database/database_connection.js');
 
 class User extends Model {    
     getFullJsonData() {
-      return {id: this.id, voornaam: this.voornaam, achternaam: this.achternaam}
+      return {id: this.id, username: this.username, password: this.password}
     }
 }
 
@@ -15,11 +15,11 @@ User.init({
     allowNull: false
   },
   
-  voornaam: {
+  username: {
     type: DataTypes.STRING(20)
   },
-  achternaam: {
-    type: DataTypes.STRING(20)
+  password: {
+    type: DataTypes.INTEGER
   }
 }, {
   // Other model options go here
